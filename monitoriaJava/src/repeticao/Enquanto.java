@@ -5,9 +5,8 @@ import java.util.Scanner;
 public class Enquanto {
     public static void main (String[] args) {
         Scanner teclado;
-        int numUm, numDois;
-        int fatorial, countUm, countDois, base, exp, potencia;
-        boolean verificador;
+        int numUm, numDois, fatorial, countUm, base, exp, potencia, antPenul, penul, valor, fibo;
+        boolean verificador, afirma;
 
         teclado = new Scanner (System.in);
 
@@ -71,16 +70,43 @@ public class Enquanto {
                 potencia = base;
                 break;
             default:
-                countDois = 2;
                 potencia = base;
-                while (countDois < exp + 1) {
+                for (int countDois = 2; countDois < exp + 1; countDois++)   {
                     potencia = potencia * base;
-                    countDois++;
                 }
                 break;
         }
 
         System.out.println("O potencia de base " + base + " e expoente " + exp + " e igual a " + potencia + "!\n");
+
+        System.out.println("Termo dentro da sequencia de valornacci\n");
+        
+        System.out.print("Digite um valor inteiro positivo para verificar se ele dentro da sequencia de fibonacci: ");
+        valor = teclado.nextInt();
+
+        if (valor == 0 || valor == 1)  {
+            afirma = true;
+        }   else    {
+            afirma = false;
+            antPenul = 1;
+            penul = 1;
+            fibo = 2;
+            while (!afirma && fibo <= valor)    {
+                if (valor == fibo)  {
+                    afirma = true;
+                }   else    {
+                    antPenul = penul;
+                    penul = fibo;
+                    fibo = antPenul + penul;
+                }
+            }
+        }
+
+        if (afirma) {
+            System.out.println("O numero " + valor + " faz parte da sequencia de fibonacci!");
+        }   else    {
+            System.out.println("O numero " + valor + " nao faz parte da sequencia de fibonacci!");
+        }
 
         teclado.close();
     }
