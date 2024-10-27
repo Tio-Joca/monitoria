@@ -7,8 +7,12 @@ public class ExemplosVets {
         Scanner teclado = new Scanner (System.in);
 
         int [] a = {2, 3, 9, 10, 19};
-        int [] b;
         boolean primo;
+
+        int [] valores;
+        int [] c;
+        boolean [] fibonacci;
+        int count;
 
         System.out.println("Verificacao de numeros primos dentro de um vetor\n");
 
@@ -32,9 +36,58 @@ public class ExemplosVets {
             }
         }
 
-        System.out.println("\nTermos dentro da sequencia de valornacci, usando um vetor\n");
+        System.out.println("\nTermos dentro da sequencia de fibonacci, usando um vetor\n");
 
-        
+        System.out.print("Informe a quantidade de termos que voce deseja verificar: ");
+        valores = new int [teclado.nextInt()];
+        fibonacci = new boolean [valores.length];
+
+        count = 0;
+
+        while (count < valores.length)  {
+            System.out.print("Digite um valor inteiro para colocar no vetor: ");
+            valores[count] = teclado.nextInt();
+            count++;
+        }
+
+        count = 0;
+        c = new int [3];
+
+        while (count < valores.length)    {
+            if (valores[count] < 0) {
+                fibonacci[count] = false;
+            }   else if (valores[count] >= 0 && valores[count] <= 3)    {
+                fibonacci[count] = true;
+            }   else    {
+                c[0] = 2;
+                c[1] = 3;
+                c[2] = 5;
+
+                while (c[2] < valores[count])  {
+                    c[0] = c[1];
+                    c[1] = c[2];
+                    c[2] = c[0] + c[1];
+                }
+
+                if (valores[count] == c[2])    {
+                    fibonacci[count] = true;
+                }   else    {
+                    fibonacci[count] = false;
+                }
+            }
+            count = count + 1;
+        }
+
+        count = 0;
+
+        while (count < fibonacci.length)    {
+            if (fibonacci[count])   {
+                System.out.println("O numero " + valores[count] + " faz parte da sequencia de fibonacci.");
+            }   else    {
+                System.out.println("O numero " + valores[count] + " nao faz parte da sequencia de fibonacci.");
+            }
+            count++;
+        }
 
         teclado.close();
     }
