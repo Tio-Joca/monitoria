@@ -1,0 +1,13 @@
+print(5 + 2)
+print(5 - 2)
+print(5 * 2)
+print(5 / 2)
+print(5 ** 2)
+print(5 // 2)
+
+print(-15.0 + 4.0)
+print(-15.0 - 4.0)
+print(-15.0 * 4.0)
+print(-15.0 / 4.0)
+print(-15.0 ** 4.0)
+print(-15.0 // 4.0)
