@@ -28,7 +28,7 @@ else:
     print("O valor inserido e maior que zero")
 
 idade = abs(int(input("Digite a sua idade: ")))
-genero = str(input("Digite o seu genero (M para masculino ou F para feminino): "))[0:1].upper()
+genero = str(input("Digite o seu genero (M para masculino ou F para feminino): "))[0].upper()
 contribuicao = abs(int(input("Digite a quantidade de anos de contribuicao feita por voce: ")))
 
 if (genero == 'F' and idade >= 62 and contribuicao >= 15):
