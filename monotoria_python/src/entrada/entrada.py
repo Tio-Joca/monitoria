@@ -5,10 +5,10 @@ d : str
 
 a = int(input("Digite um valor inteiro: "))
 b = float(input("Digite um valor flutuante (decimal): "))
-c = int(input("Digite zero para false ou qualquer valor inteiro para true: ")) != 0
+c = bool(input("Aperte enter para False ou digite o que quiser para true: "))
 d = str(input("Digite uma palavra ou uma frase: "))
 
-print('\n' + str(a))
-print(b)
-print(c)
-print(d)
+print("\nValor inteiro inserido: " + str(a))
+print("Valor flutuante inserido: " + str(b))
+print("Valor booleano inserido: " + str(c))
+print("Palavra ou frase inserida: " + str(d))

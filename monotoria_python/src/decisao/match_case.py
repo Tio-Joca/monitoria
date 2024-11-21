@@ -8,17 +8,19 @@ linguagem = str(input("Digite o nome de uma linguagem de programacao: "))
 
 match inteiro:
     case 1:
-        print(inteiro + 1)
+        print(inteiro + 0)
     case 2:
-        print(inteiro - 2)
+        print(inteiro - 1)
     case 3:
-        print(inteiro * 3)
+        print(inteiro * 2)
     case 4:
-        print(inteiro / 4)
+        print(inteiro / 3)
     case 5:
-        print(inteiro ** 5)
+        print(inteiro ** 4)
+    case 6:
+        print(inteiro // 5)
     case _:
-        print(inteiro // 3)
+        print(inteiro % 6)
 
 match flutuante:
     case 3.14:
